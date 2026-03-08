@@ -1,0 +1,2148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Ocean Breeze Retreat | Luxury Beach Resort & Restaurant</title>
+   
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+   <style>
+       * {
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+       }
+
+       :root {
+           --ocean-deep: #006994;
+           --ocean-light: #00a8cc;
+           --ocean-pale: #b4e7f0;
+           --sand-light: #f5e6d3;
+           --sand-dark: #d4a574;
+           --white: #ffffff;
+           --dark: #2c3e50;
+           --glass-bg: rgba(255, 255, 255, 0.15);
+           --glass-border: rgba(255, 255, 255, 0.25);
+           --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+           --transition: all 0.3s ease;
+       }
+
+       html {
+           scroll-behavior: smooth;
+       }
+
+       body {
+           font-family: 'Poppins', sans-serif;
+           line-height: 1.6;
+           color: var(--dark);
+           overflow-x: hidden;
+       }
+
+       /* ===================================================== */
+       /* =============== NAVIGATION ========================== */
+       /* ===================================================== */
+       nav {
+           position: fixed;
+           top: 0;
+           width: 100%;
+           padding: 1rem 5%;
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           z-index: 1000;
+           background: rgba(0, 105, 148, 0.95);
+           backdrop-filter: blur(10px);
+           box-shadow: var(--shadow);
+           transition: var(--transition);
+       }
+
+       nav.scrolled {
+           padding: 0.8rem 5%;
+           background: rgba(0, 105, 148, 0.98);
+       }
+
+       .logo {
+           display: flex;
+           align-items: center;
+           gap: 0.5rem;
+           color: var(--white);
+           font-size: 1.5rem;
+           font-weight: 600;
+           text-decoration: none;
+       }
+
+       /* ===================================================== */
+       /* =============== LOGO IMAGE STYLE ==================== */
+       /* ===================================================== */
+       /* YAHAN APNA LOGO IMAGE LAGAO */
+       .logo-img { https://ibb.co/GqJcCLK
+           height: 50px;
+           width: auto;
+           border-radius: 10px;
+           object-fit: contain;
+       }
+
+       .logo i {
+           font-size: 2rem;
+           animation: wave 2s ease-in-out infinite;
+       }
+
+       @keyframes wave {
+           0%, 100% { transform: rotate(-5deg); }
+           50% { transform: rotate(5deg); }
+       }
+
+       .nav-links {
+           display: flex;
+           list-style: none;
+           gap: 2rem;
+       }
+
+       .nav-links a {
+           color: var(--white);
+           text-decoration: none;
+           font-weight: 500;
+           position: relative;
+           transition: var(--transition);
+       }
+
+       .nav-links a::after {
+           content: '';
+           position: absolute;
+           bottom: -5px;
+           left: 0;
+           width: 0;
+           height: 2px;
+           background: var(--sand-light);
+           transition: var(--transition);
+       }
+
+       .nav-links a:hover::after {
+           width: 100%;
+       }
+
+       .mobile-menu {
+           display: none;
+           color: var(--white);
+           font-size: 1.5rem;
+           cursor: pointer;
+       }
+
+       /* ===================================================== */
+       /* =============== HERO SECTION ======================== */
+       /* ===================================================== */
+       #home {
+           min-height: 100vh;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           position: relative;
+           overflow: hidden;
+           background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean-light) 50%, var(--ocean-pale) 100%);
+       }
+
+       .hero-video {
+           position: absolute;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+           z-index: 0;
+       }
+
+       .hero-overlay {
+           position: absolute;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           background: linear-gradient(to bottom, rgba(0, 105, 148, 0.7), rgba(0, 168, 204, 0.5));
+           z-index: 1;
+       }
+
+       .hero-content {
+           text-align: center;
+           color: var(--white);
+           padding: 2rem;
+           max-width: 900px;
+           z-index: 2;
+           animation: fadeInUp 1s ease;
+       }
+
+       @keyframes fadeInUp {
+           from {
+               opacity: 0;
+               transform: translateY(30px);
+           }
+           to {
+               opacity: 1;
+               transform: translateY(0);
+           }
+       }
+
+       .hero-content h1 {
+           font-size: 4rem;
+           font-weight: 700;
+           margin-bottom: 1rem;
+           text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+       }
+
+       .hero-content p {
+           font-size: 1.3rem;
+           margin-bottom: 2rem;
+           opacity: 0.95;
+       }
+
+       .btn {
+           display: inline-block;
+           padding: 1rem 2.5rem;
+           border-radius: 50px;
+           text-decoration: none;
+           font-weight: 600;
+           transition: var(--transition);
+           cursor: pointer;
+           border: none;
+           font-size: 1rem;
+       }
+
+       .btn-primary {
+           background: var(--sand-dark);
+           color: var(--white);
+       }
+
+       .btn-primary:hover {
+           background: var(--sand-light);
+           color: var(--dark);
+           transform: translateY(-3px);
+           box-shadow: 0 10px 30px rgba(212, 165, 116, 0.4);
+       }
+
+       .btn-secondary {
+           background: transparent;
+           color: var(--white);
+           border: 2px solid var(--white);
+           margin-left: 1rem;
+       }
+
+       .btn-secondary:hover {
+           background: var(--white);
+           color: var(--ocean-deep);
+       }
+
+       .floating-elements {
+           position: absolute;
+           width: 100%;
+           height: 100%;
+           overflow: hidden;
+           pointer-events: none;
+           z-index: 1;
+       }
+
+       .floating-elements span {
+           position: absolute;
+           font-size: 2rem;
+           opacity: 0.6;
+           animation: float 8s ease-in-out infinite;
+       }
+
+       @keyframes float {
+           0%, 100% { transform: translateY(0) rotate(0deg); }
+           50% { transform: translateY(-20px) rotate(10deg); }
+       }
+
+       /* ===================================================== */
+       /* =============== SECTION STYLES ====================== */
+       /* ===================================================== */
+       section {
+           padding: 6rem 5%;
+       }
+
+       .section-header {
+           text-align: center;
+           margin-bottom: 4rem;
+       }
+
+       .section-header h2 {
+           font-size: 2.8rem;
+           color: var(--ocean-deep);
+           margin-bottom: 1rem;
+           position: relative;
+           display: inline-block;
+       }
+
+       .section-header h2::after {
+           content: '🐚';
+           position: absolute;
+           right: -3rem;
+           animation: float 3s ease-in-out infinite;
+       }
+
+       .section-header p {
+           color: var(--sand-dark);
+           font-size: 1.1rem;
+           max-width: 600px;
+           margin: 0 auto;
+       }
+
+       /* ===================================================== */
+       /* =============== PACKAGES SECTION ==================== */
+       /* ===================================================== */
+       #packages {
+           background: var(--white);
+       }
+
+       .packages-grid {
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+           gap: 2rem;
+           max-width: 1200px;
+           margin: 0 auto;
+       }
+
+       .package-card {
+           background: var(--white);
+           border-radius: 20px;
+           overflow: hidden;
+           box-shadow: var(--shadow);
+           transition: var(--transition);
+           position: relative;
+           cursor: pointer;
+       }
+
+       .package-card::before {
+           content: '';
+           position: absolute;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 5px;
+           background: linear-gradient(90deg, var(--ocean-deep), var(--sand-dark));
+           z-index: 2;
+       }
+
+       .package-card:hover {
+           transform: translateY(-10px);
+           box-shadow: 0 20px 40px rgba(0, 105, 148, 0.2);
+       }
+
+       .package-card.featured::before {
+           height: 8px;
+           background: linear-gradient(90deg, var(--sand-dark), var(--ocean-light), var(--sand-dark));
+       }
+
+       .package-badge {
+           position: absolute;
+           top: 1rem;
+           right: 1rem;
+           background: var(--sand-dark);
+           color: var(--white);
+           padding: 0.3rem 1rem;
+           border-radius: 20px;
+           font-size: 0.8rem;
+           font-weight: 600;
+           z-index: 2;
+       }
+
+       .package-image {
+           height: 220px;
+           position: relative;
+           overflow: hidden;
+       }
+
+       .package-image img {
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+           transition: var(--transition);
+       }
+
+       .package-card:hover .package-image img {
+           transform: scale(1.1);
+       }
+
+       .package-content {
+           padding: 2rem;
+       }
+
+       .package-content h3 {
+           font-size: 1.5rem;
+           color: var(--ocean-deep);
+           margin-bottom: 0.5rem;
+       }
+
+       .package-price {
+           font-size: 2.5rem;
+           font-weight: 700;
+           color: var(--sand-dark);
+           margin-bottom: 1rem;
+       }
+
+       .package-price span {
+           font-size: 1rem;
+           color: var(--dark);
+           font-weight: 400;
+       }
+
+       .package-features {
+           list-style: none;
+           margin-bottom: 1.5rem;
+       }
+
+       .package-features li {
+           padding: 0.5rem 0;
+           color: #666;
+           display: flex;
+           align-items: center;
+           gap: 0.5rem;
+       }
+
+       .package-features li i {
+           color: var(--ocean-light);
+       }
+
+       /* ===================================================== */
+       /* =============== GALLERY SECTION ===================== */
+       /* ===================================================== */
+       #gallery {
+           background: var(--ocean-pale);
+       }
+
+       .gallery-grid {
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+           gap: 1.5rem;
+           max-width: 1400px;
+           margin: 0 auto;
+       }
+
+       .gallery-item {
+           position: relative;
+           border-radius: 15px;
+           overflow: hidden;
+           aspect-ratio: 4/3;
+           cursor: pointer;
+       }
+
+       .gallery-item img {
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+           transition: var(--transition);
+       }
+
+       .gallery-item:hover img {
+           transform: scale(1.15);
+       }
+
+       .gallery-overlay {
+           position: absolute;
+           bottom: 0;
+           left: 0;
+           right: 0;
+           padding: 2rem;
+           background: linear-gradient(to top, rgba(0, 105, 148, 0.9), transparent);
+           color: var(--white);
+           transform: translateY(100%);
+           transition: var(--transition);
+       }
+
+       .gallery-item:hover .gallery-overlay {
+           transform: translateY(0);
+       }
+
+       .gallery-overlay h4 {
+           font-size: 1.2rem;
+           margin-bottom: 0.3rem;
+       }
+
+       /* ===================================================== */
+       /* =============== ABOUT SECTION ======================= */
+       /* ===================================================== */
+       #about {
+           background: var(--white);
+       }
+
+       .about-container {
+           max-width: 1200px;
+           margin: 0 auto;
+           display: grid;
+           grid-template-columns: 1fr 1fr;
+           gap: 4rem;
+           align-items: center;
+       }
+
+       .about-image {
+           position: relative;
+           border-radius: 20px;
+           overflow: hidden;
+           box-shadow: var(--shadow);
+       }
+
+       .about-image img {
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+       }
+
+       .about-image .experience-badge {
+           position: absolute;
+           bottom: 2rem;
+           right: 2rem;
+           background: var(--sand-dark);
+           color: var(--white);
+           padding: 1.5rem;
+           border-radius: 50%;
+           text-align: center;
+           width: 120px;
+           height: 120px;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           animation: pulse 2s ease-in-out infinite;
+       }
+
+       @keyframes pulse {
+           0%, 100% { transform: scale(1); }
+           50% { transform: scale(1.05); }
+       }
+
+       .experience-badge span {
+           font-size: 2rem;
+           font-weight: 700;
+           line-height: 1;
+       }
+
+       .experience-badge small {
+           font-size: 0.8rem;
+       }
+
+       .about-content h3 {
+           font-size: 2rem;
+           color: var(--ocean-deep);
+           margin-bottom: 1rem;
+       }
+
+       .about-content p {
+           color: #666;
+           margin-bottom: 1.5rem;
+           line-height: 1.8;
+       }
+
+       .stats-grid {
+           display: grid;
+           grid-template-columns: repeat(3, 1fr);
+           gap: 1.5rem;
+           margin-top: 2rem;
+       }
+
+       .stat-item {
+           text-align: center;
+           padding: 1.5rem;
+           background: var(--sand-light);
+           border-radius: 15px;
+       }
+
+       .stat-item i {
+           font-size: 2rem;
+           color: var(--ocean-deep);
+           margin-bottom: 0.5rem;
+       }
+
+       .stat-item h4 {
+           font-size: 1.8rem;
+           color: var(--sand-dark);
+       }
+
+       /* ===================================================== */
+       /* =============== BOOKING SECTION WITH PACKAGE PREVIEW = */
+       /* ===================================================== */
+       #booking {
+           background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean-light) 100%);
+           position: relative;
+           overflow: hidden;
+       }
+
+       #booking::before {
+           content: '🏖️';
+           position: absolute;
+           font-size: 15rem;
+           opacity: 0.05;
+           bottom: -2rem;
+           left: -2rem;
+       }
+
+       #booking .section-header h2,
+       #booking .section-header p {
+           color: var(--white);
+       }
+
+       #booking .section-header h2::after {
+           content: '📅';
+       }
+
+       /* ===================================================== */
+       /* =============== PACKAGE PREVIEW CONTAINER ============ */
+       /* ===================================================== */
+       .booking-wrapper {
+           max-width: 1400px;
+           margin: 0 auto;
+           display: grid;
+           grid-template-columns: 1.2fr 0.8fr;
+           gap: 2rem;
+           align-items: start;
+       }
+
+       /* Package Preview - Left Side */
+       .package-preview {
+           position: sticky;
+           top: 100px;
+           background: var(--glass-bg);
+           backdrop-filter: blur(10px);
+           border: 1px solid var(--glass-border);
+           border-radius: 20px;
+           overflow: hidden;
+           transition: var(--transition);
+       }
+
+       .preview-media {
+           position: relative;
+           height: 350px;
+           overflow: hidden;
+       }
+
+       .preview-media img,
+       .preview-media video {
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+           transition: var(--transition);
+       }
+
+       .preview-overlay {
+           position: absolute;
+           bottom: 0;
+           left: 0;
+           right: 0;
+           padding: 2rem;
+           background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+           color: var(--white);
+       }
+
+       .preview-badge {
+           display: inline-block;
+           background: var(--sand-dark);
+           color: var(--white);
+           padding: 0.3rem 1rem;
+           border-radius: 20px;
+           font-size: 0.8rem;
+           font-weight: 600;
+           margin-bottom: 0.5rem;
+       }
+
+       .preview-title {
+           font-size: 2rem;
+           font-weight: 700;
+           margin-bottom: 0.5rem;
+       }
+
+       .preview-price {
+           font-size: 2.5rem;
+           color: var(--sand-light);
+           font-weight: 700;
+       }
+
+       .preview-price span {
+           font-size: 1rem;
+           opacity: 0.8;
+       }
+
+       .preview-details {
+           padding: 2rem;
+           color: var(--white);
+       }
+
+       .preview-details h4 {
+           margin-bottom: 1rem;
+           color: var(--sand-light);
+       }
+
+       .preview-features {
+           list-style: none;
+       }
+
+       .preview-features li {
+           padding: 0.5rem 0;
+           display: flex;
+           align-items: center;
+           gap: 0.8rem;
+       }
+
+       .preview-features li i {
+           color: var(--sand-dark);
+           width: 20px;
+       }
+
+       /* Media type indicator */
+       .media-indicator {
+           position: absolute;
+           top: 1rem;
+           right: 1rem;
+           background: rgba(0, 0, 0, 0.6);
+           color: var(--white);
+           padding: 0.5rem 1rem;
+           border-radius: 25px;
+           font-size: 0.8rem;
+           display: flex;
+           align-items: center;
+           gap: 0.5rem;
+       }
+
+       /* Thumbnail navigation */
+       .preview-thumbnails {
+           display: flex;
+           gap: 0.5rem;
+           padding: 1rem 2rem;
+           background: rgba(0, 0, 0, 0.3);
+           overflow-x: auto;
+       }
+
+       .preview-thumb {
+           min-width: 80px;
+           height: 60px;
+           border-radius: 8px;
+           overflow: hidden;
+           cursor: pointer;
+           border: 2px solid transparent;
+           transition: var(--transition);
+           opacity: 0.6;
+       }
+
+       .preview-thumb.active,
+       .preview-thumb:hover {
+           border-color: var(--sand-dark);
+           opacity: 1;
+       }
+
+       .preview-thumb img,
+       .preview-thumb video {
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+       }
+
+       /* Booking Form - Right Side */
+       .booking-container {
+           background: var(--glass-bg);
+           backdrop-filter: blur(10px);
+           border: 1px solid var(--glass-border);
+           border-radius: 20px;
+           padding: 2rem;
+       }
+
+       .booking-form {
+           display: grid;
+           gap: 1.2rem;
+       }
+
+       .package-select {
+           display: grid;
+           grid-template-columns: repeat(3, 1fr);
+           gap: 0.8rem;
+           margin-bottom: 0.5rem;
+       }
+
+       .package-option {
+           position: relative;
+           padding: 1rem 0.5rem;
+           background: rgba(255, 255, 255, 0.1);
+           border: 2px solid var(--glass-border);
+           border-radius: 12px;
+           text-align: center;
+           cursor: pointer;
+           transition: var(--transition);
+       }
+
+       .package-option input {
+           position: absolute;
+           opacity: 0;
+       }
+
+       .package-option.selected,
+       .package-option:hover {
+           background: var(--sand-dark);
+           border-color: var(--sand-light);
+           transform: translateY(-3px);
+       }
+
+       .package-option .price {
+           font-size: 1.3rem;
+           font-weight: 700;
+           color: var(--white);
+       }
+
+       .package-option .name {
+           color: var(--ocean-pale);
+           font-size: 0.75rem;
+       }
+
+       .form-row {
+           display: grid;
+           grid-template-columns: 1fr 1fr;
+           gap: 1rem;
+       }
+
+       .form-group {
+           position: relative;
+       }
+
+       .form-group label {
+           display: block;
+           color: var(--white);
+           margin-bottom: 0.4rem;
+           font-size: 0.9rem;
+           font-weight: 500;
+       }
+
+       .form-group label i {
+           margin-right: 0.3rem;
+           color: var(--sand-light);
+       }
+
+       .form-group input,
+       .form-group select,
+       .form-group textarea {
+           width: 100%;
+           padding: 0.9rem;
+           border: 2px solid var(--glass-border);
+           border-radius: 10px;
+           background: rgba(255, 255, 255, 0.9);
+           font-size: 0.95rem;
+           transition: var(--transition);
+       }
+
+       .form-group input:focus,
+       .form-group select:focus,
+       .form-group textarea:focus {
+           outline: none;
+           border-color: var(--sand-dark);
+           background: var(--white);
+       }
+
+       .form-group textarea {
+           min-height: 100px;
+           resize: vertical;
+       }
+
+       .submit-btn {
+           width: 100%;
+           padding: 1.1rem;
+           background: var(--sand-dark);
+           color: var(--white);
+           border: none;
+           border-radius: 10px;
+           font-size: 1.05rem;
+           font-weight: 600;
+           cursor: pointer;
+           transition: var(--transition);
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           gap: 0.5rem;
+           margin-top: 0.5rem;
+       }
+
+       .submit-btn:hover {
+           background: var(--sand-light);
+           color: var(--dark);
+           transform: translateY(-3px);
+       }
+
+       .no-payment-note {
+           text-align: center;
+           color: var(--ocean-pale);
+           font-size: 0.9rem;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           gap: 0.5rem;
+       }
+
+       /* ===================================================== */
+       /* =============== ADMIN NOTIFICATION STYLES ============= */
+       /* ===================================================== */
+       .admin-notify-box {
+           background: rgba(212, 165, 116, 0.2);
+           border: 2px dashed var(--sand-dark);
+           border-radius: 12px;
+           padding: 1rem;
+           margin-bottom: 1rem;
+           text-align: center;
+       }
+
+       .admin-notify-box i {
+           color: var(--sand-light);
+           font-size: 1.5rem;
+           margin-bottom: 0.5rem;
+       }
+
+       .admin-notify-box p {
+           color: var(--white);
+           font-size: 0.85rem;
+           margin: 0;
+       }
+
+       .admin-notify-box strong {
+           color: var(--sand-light);
+       }
+
+       /* ===================================================== */
+       /* =============== CONTACT SECTION ===================== */
+       /* ===================================================== */
+       #contact {
+           background: var(--sand-light);
+       }
+
+       .contact-container {
+           max-width: 1200px;
+           margin: 0 auto;
+           display: grid;
+           grid-template-columns: 1fr 1fr;
+           gap: 4rem;
+       }
+
+       .contact-info {
+           display: grid;
+           gap: 1.5rem;
+       }
+
+       .contact-card {
+           background: var(--white);
+           padding: 2rem;
+           border-radius: 15px;
+           display: flex;
+           align-items: flex-start;
+           gap: 1.5rem;
+           box-shadow: var(--shadow);
+           transition: var(--transition);
+       }
+
+       .contact-card:hover {
+           transform: translateX(10px);
+       }
+
+       .contact-card i {
+           width: 60px;
+           height: 60px;
+           background: var(--ocean-deep);
+           color: var(--white);
+           border-radius: 15px;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           font-size: 1.5rem;
+           flex-shrink: 0;
+       }
+
+       .contact-card h4 {
+           color: var(--ocean-deep);
+           margin-bottom: 0.3rem;
+       }
+
+       .contact-card p, .contact-card a {
+           color: #666;
+           text-decoration: none;
+           transition: var(--transition);
+       }
+
+       .contact-card a:hover {
+           color: var(--sand-dark);
+       }
+
+       .map-container {
+           background: var(--white);
+           border-radius: 20px;
+           overflow: hidden;
+           box-shadow: var(--shadow);
+           height: 100%;
+           min-height: 400px;
+           position: relative;
+       }
+
+       .map-placeholder {
+           width: 100%;
+           height: 100%;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           justify-content: center;
+           background: var(--ocean-pale);
+           color: var(--ocean-deep);
+       }
+
+       .map-placeholder i {
+           font-size: 5rem;
+           margin-bottom: 1rem;
+           animation: bounce 2s infinite;
+       }
+
+       @keyframes bounce {
+           0%, 100% { transform: translateY(0); }
+           50% { transform: translateY(-20px); }
+       }
+
+       /* ===================================================== */
+       /* =============== FOOTER ============================== */
+       /* ===================================================== */
+       footer {
+           background: var(--ocean-deep);
+           color: var(--white);
+           padding: 4rem 5% 2rem;
+       }
+
+       .footer-content {
+           max-width: 1200px;
+           margin: 0 auto;
+           display: grid;
+           grid-template-columns: repeat(4, 1fr);
+           gap: 3rem;
+           margin-bottom: 3rem;
+       }
+
+       .footer-section h4 {
+           margin-bottom: 1.5rem;
+           color: var(--sand-light);
+       }
+
+       .footer-section ul {
+           list-style: none;
+       }
+
+       .footer-section a {
+           color: var(--ocean-pale);
+           text-decoration: none;
+           line-height: 2.2;
+           transition: var(--transition);
+           display: inline-block;
+       }
+
+       .footer-section a:hover {
+           color: var(--sand-dark);
+           transform: translateX(5px);
+       }
+
+       .social-links {
+           display: flex;
+           gap: 1rem;
+       }
+
+       .social-links a {
+           width: 45px;
+           height: 45px;
+           background: var(--ocean-light);
+           border-radius: 50%;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           transition: var(--transition);
+       }
+
+       .social-links a:hover {
+           background: var(--sand-dark);
+           transform: translateY(-5px) rotate(10deg);
+       }
+
+       .newsletter {
+           margin-top: 1rem;
+       }
+
+       .newsletter input {
+           width: 100%;
+           padding: 0.8rem;
+           border-radius: 25px;
+           border: none;
+           margin-bottom: 0.5rem;
+       }
+
+       .newsletter button {
+           width: 100%;
+           padding: 0.8rem;
+           border-radius: 25px;
+           border: none;
+           background: var(--sand-dark);
+           color: var(--white);
+           font-weight: 600;
+           cursor: pointer;
+           transition: var(--transition);
+       }
+
+       .newsletter button:hover {
+           background: var(--sand-light);
+           color: var(--dark);
+       }
+
+       .footer-bottom {
+           text-align: center;
+           padding-top: 2rem;
+           border-top: 1px solid var(--ocean-light);
+           color: var(--ocean-pale);
+       }
+
+       /* ===================================================== */
+       /* =============== RESPONSIVE DESIGN =================== */
+       /* ===================================================== */
+       @media (max-width: 1200px) {
+           .booking-wrapper {
+               grid-template-columns: 1fr;
+           }
+
+           .package-preview {
+               position: relative;
+               top: 0;
+               order: -1;
+           }
+
+           .preview-media {
+               height: 280px;
+           }
+       }
+
+       @media (max-width: 992px) {
+           .about-container,
+           .contact-container {
+               grid-template-columns: 1fr;
+           }
+
+           .footer-content {
+               grid-template-columns: repeat(2, 1fr);
+           }
+
+           .hero-content h1 {
+               font-size: 2.8rem;
+           }
+       }
+
+       @media (max-width: 768px) {
+           .nav-links {
+               position: fixed;
+               top: 70px;
+               right: -100%;
+               width: 80%;
+               max-width: 300px;
+               height: calc(100vh - 70px);
+               background: var(--ocean-deep);
+               flex-direction: column;
+               padding: 2rem;
+               transition: var(--transition);
+           }
+
+           .nav-links.active {
+               right: 0;
+           }
+
+           .mobile-menu {
+               display: block;
+           }
+
+           /* Mobile logo adjustment */
+           .logo-img {
+               height: 40px;
+           }
+
+           .hero-content h1 {
+               font-size: 2.2rem;
+           }
+
+           .btn-secondary {
+               margin-left: 0;
+               margin-top: 1rem;
+           }
+
+           .hero-btns {
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+           }
+
+           .form-row {
+               grid-template-columns: 1fr;
+           }
+
+           .package-select {
+               grid-template-columns: 1fr;
+           }
+
+           .stats-grid {
+               grid-template-columns: 1fr;
+           }
+
+           .footer-content {
+               grid-template-columns: 1fr;
+               text-align: center;
+           }
+
+           .social-links {
+               justify-content: center;
+           }
+
+           section {
+               padding: 4rem 5%;
+           }
+
+           .preview-media {
+               height: 220px;
+           }
+
+           .preview-title {
+               font-size: 1.5rem;
+           }
+
+           .preview-price {
+               font-size: 1.8rem;
+           }
+       }
+
+       /* ===================================================== */
+       /* =============== SCROLL ANIMATIONS =================== */
+       /* ===================================================== */
+       .reveal {
+           opacity: 0;
+           transform: translateY(30px);
+           transition: all 0.8s ease;
+       }
+
+       .reveal.active {
+           opacity: 1;
+           transform: translateY(0);
+       }
+   </style>
+</head>
+<body>
+   <!-- ================= NAVIGATION ================= -->
+   <nav id="navbar">
+       <!-- ===================================================== -->
+       <!-- =============== LOGO SECTION - YAHAN EDIT KARO ====== -->
+       <!-- ===================================================== -->
+       <!-- 
+           OPTION 1: Image Logo ke liye niche wala line uncomment karo 
+           aur apna logo image link daalo:
+       -->
+       <a href="#home" class="logo">
+           <!-- 
+               =====================================================
+               =============== YOUR LOGO IMAGE HERE =================
+               =====================================================
+               Yahan apna logo image link paste karo
+               Recommended size: 150x50px, transparent background PNG
+           -->
+           <img src="https://i.ibb.co/wrcWG3QH/IMG-20260307-183855.jpg" alt="Ocean Breeze Retreat Logo" class="logo-img">
+           <span>BLEX DEVLOPER </span>
+</a>
+           <!-- Ya phir text logo chaho toh niche wala use karo: -->
+           <!-- <i class="fas fa-water"></i> -->
+           <!-- <span>Ocean Breeze Retreat</span> -->
+       </a>
+       
+       <!-- 
+           OPTION 2: Agar sirf text/emoji logo chahiye toh 
+           upar wale img tag ko comment karke niche wala use karo:
+       -->
+       <!-- 
+       <a href="#home" class="logo">
+           <i class="fas fa-water"></i>
+           Ocean Breeze Retreat
+       </a> 
+       -->
+
+       <ul class="nav-links">
+           <li><a href="#home">Home</a></li>
+           <li><a href="#packages">Packages</a></li>
+           <li><a href="#gallery">Gallery</a></li>
+           <li><a href="#about">About</a></li>
+           <li><a href="#booking">Booking</a></li>
+           <li><a href="#contact">Contact</a></li>
+       </ul>
+       <div class="mobile-menu" onclick="toggleMenu()">
+           <i class="fas fa-bars"></i>
+       </div>
+   </nav>
+
+   <!-- ================= HOME / HERO SECTION ================= -->
+   <section id="home">
+       <!-- ================= VIDEO LINK HERE ================= -->
+       <video class="hero-video" autoplay muted loop playsinline poster="https://i.ibb.co/5h86J2hv/11-beaches-valentinvalkov.jpg">
+           <source src="Clouds_Free_STOCK_FOOTAGE_240P.mp4" type="video/mp4">
+       </video>
+       
+       <div class="hero-overlay"></div>
+       
+       <div class="floating-elements">
+           <span style="top: 20%; left: 10%; animation-delay: 0s;">🏖️</span>
+           <span style="top: 60%; left: 15%; animation-delay: 2s;">🐚</span>
+           <span style="top: 30%; right: 15%; animation-delay: 1s;">🌴</span>
+           <span style="top: 70%; right: 10%; animation-delay: 3s;">⛵</span>
+           <span style="top: 40%; left: 5%; animation-delay: 4s;">🐟</span>
+       </div>
+
+       <div class="hero-content">
+           <h1>BLEX WEBSITE </h1>
+           <p>Experience luxury beachfront living with world-class dining at Ocean Breeze Retreat. Your perfect coastal getaway awaits.</p>
+           <div class="hero-btns">
+               <a href="#booking" class="btn btn-primary">Book Your Stay</a>
+               <a href="#packages" class="btn btn-secondary">View Packages</a>
+           </div>
+       </div>
+   </section>
+
+   <!-- ================= PACKAGES SECTION ================= -->
+   <section id="packages">
+       <div class="section-header reveal">
+           <h2>Our Packages</h2>
+           <p>Choose from our carefully curated experiences designed for every type of traveler</p>
+       </div>
+
+       <div class="packages-grid">
+           <!-- Package 1 -->
+           <div class="package-card reveal" onclick="scrollToBooking('beach')">
+               <div class="package-image">
+                   <!-- ================= PHOTO LINK HERE - BEACH DAY PACKAGE ===== -->
+                   <img src="https://i.ibb.co/Ndbv4X1n/bo-Yw3o-Rv2d8-SD.jpg" alt="Beach Day Package">
+               </div>
+               <div class="package-content">
+                   <h3>🌊 Beach Day Escape</h3>
+                   <div class="package-price">
+                       ₹1,300
+                       <span>/person</span>
+                   </div>
+                   <ul class="package-features">
+                       <li><i class="fas fa-check"></i> Welcome drink & snacks</li>
+                       <li><i class="fas fa-check"></i> Beach umbrella & seating</li>
+                       <li><i class="fas fa-check"></i> Access to restaurant</li>
+                       <li><i class="fas fa-check"></i> Basic water sports</li>
+                       <li><i class="fas fa-check"></i> Sunset viewing</li>
+                   </ul>
+                   <span class="btn btn-primary" style="width: 100%; text-align: center; display: block;">Select Package</span>
+               </div>
+           </div>
+
+           <!-- Package 2 - Featured -->
+           <div class="package-card featured reveal" onclick="scrollToBooking('weekend')">
+               <span class="package-badge">Most Popular</span>
+               <div class="package-image">
+                   <!-- ================= PHOTO LINK HERE - WEEKEND PACKAGE ===== -->
+                   <img src="https://i.ibb.co/Ps8DNtg9/CWe-Jo-ZUv4-Xo-SD.jpg" alt="Weekend Retreat">
+               </div>
+               <div class="package-content">
+                   <h3>🏖️ Weekend Retreat</h3>
+                   <div class="package-price">
+                       ₹2,500
+                       <span>/person</span>
+                   </div>
+                   <ul class="package-features">
+                       <li><i class="fas fa-check"></i> 2 nights beachfront stay</li>
+                       <li><i class="fas fa-check"></i> All meals included</li>
+                       <li><i class="fas fa-check"></i> Private beach access</li>
+                       <li><i class="fas fa-check"></i> Sunset cruise</li>
+                       <li><i class="fas fa-check"></i> Spa session & yoga</li>
+                       <li><i class="fas fa-check"></i> Complimentary drinks</li>
+                   </ul>
+                   <span class="btn btn-primary" style="width: 100%; text-align: center; display: block;">Select Package</span>
+               </div>
+           </div>
+
+           <!-- Package 3 -->
+           <div class="package-card reveal" onclick="scrollToBooking('luxury')">
+               <div class="package-image">
+                   <!-- ================= PHOTO LINK HERE - LUXURY PACKAGE ===== -->
+                   <img src="https://i.ibb.co/MktZwMy8/aw5t7-Txj4-SD.jpg" alt="Luxury Getaway">
+               </div>
+               <div class="package-content">
+                   <h3>👑 Luxury Getaway</h3>
+                   <div class="package-price">
+                       ₹5,000
+                       <span>/person</span>
+                   </div>
+                   <ul class="package-features">
+                       <li><i class="fas fa-check"></i> 3 nights premium villa</li>
+                       <li><i class="fas fa-check"></i> Gourmet dining experience</li>
+                       <li><i class="fas fa-check"></i> Private pool & butler</li>
+                       <li><i class="fas fa-check"></i> Helicopter arrival option</li>
+                       <li><i class="fas fa-check"></i> Full spa & wellness</li>
+                       <li><i class="fas fa-check"></i> Exclusive activities</li>
+                   </ul>
+                   <span class="btn btn-primary" style="width: 100%; text-align: center; display: block;">Select Package</span>
+               </div>
+           </div>
+       </div>
+   </section>
+
+   <!-- ================= GALLERY SECTION ================= -->
+   <section id="gallery">
+       <div class="section-header reveal">
+           <h2>Gallery</h2>
+           <p>Capture the moments that make Ocean Breeze Retreat unforgettable</p>
+       </div>
+
+       <div class="gallery-grid">
+           <div class="gallery-item reveal">
+               <!-- ================= PHOTO LINK HERE ================= -->
+               <img src="https://i.ibb.co/35GHj4gg/Sg-AHARkl-JK0-SD.jpg" alt="Beach Sunset">
+               <div class="gallery-overlay">
+                   <h4>Golden Hour</h4>
+                   <p>Breathtaking sunsets</p>
+               </div>
+           </div>
+           <div class="gallery-item reveal">
+               <!-- ================= PHOTO LINK HERE ================= -->
+               <img src="https://i.ibb.co/XxbfySZ3/5i-fk-Ki-P-U-SD.jpg`` alt="Restaurant Dining">
+               <div class="gallery-overlay">
+                   <h4>Ocean Dining</h4>
+                   <p>Exquisite coastal cuisine</p>
+               </div>
+           </div>
+           <div class="gallery-item reveal">
+               <!-- ================= PHOTO LINK HERE ================= -->
+               <img src="https://i.ibb.co/ycJ7NwkG/Cm-Afnm-BWIw-SD.jpg" alt="Luxury Villa">
+               <div class="gallery-overlay">
+                   <h4>Premium Villas</h4>
+                   <p>Ultimate comfort</p>
+               </div>
+           </div>
+           <div class="gallery-item reveal">
+               <!-- ================= PHOTO LINK HERE ================= -->
+               <img src="https://i.ibb.co/5XcccYHC/vp-VEp-FYDSKU-HQ.jpg" alt="Water Sports">
+               <div class="gallery-overlay">
+                   <h4>Adventure</h4>
+                   <p>Thrilling water sports</p>
+               </div>
+           </div>
+           <div class="gallery-item reveal">
+               <!-- ================= PHOTO LINK HERE ================= -->
+               <img src="https://i.ibb.co/MktZwMy8/aw5t7-Txj4-SD.jpg" alt="Spa Wellness">
+               <div class="gallery-overlay">
+                   <h4>Serenity Spa</h4>
+                   <p>Complete relaxation</p>
+               </div>
+           </div>
+           <div class="gallery-item reveal">
+               <!-- ================= PHOTO LINK HERE ================= -->
+               <img src="https://i.ibb.co/Ps8DNtg9/CWe-Jo-ZUv4-Xo-SD.jpg" alt="Wedding Setup">
+               <div class="gallery-overlay">
+                   <h4>Celebrations</h4>
+                   <p>Dream beach weddings</p>
+               </div>
+           </div>
+       </div>
+   </section>
+
+   <!-- ================= ABOUT SECTION ================= -->
+   <section id="about">
+       <div class="section-header reveal">
+           <h2>About Us</h2>
+           <p>Discover the story behind your perfect coastal escape</p>
+       </div>
+
+       <div class="about-container">
+           <div class="about-image reveal">
+               <!-- ================= PHOTO LINK HERE ================= -->
+               <img src="https://i.ibb.co/hRVcVBfv/p-AWa59-Mwo-U-SD.jpg" alt="Ocean Breeze Retreat Resort">
+               <div class="experience-badge">
+                   <span>15+</span>
+                   <small>Years of<br>Excellence</small>
+               </div>
+           </div>
+           <div class="about-content reveal">
+               <h3>Where Luxury Meets Nature</h3>
+               <p>Founded in 2009, Ocean Breeze Retreat began as a small family-owned beach house with a simple dream: to share the magic of coastal living with the world. Today, we've grown into an award-winning destination while maintaining our commitment to personalized service and sustainable luxury.</p>
+               <p>Our resort features 45 exclusive villas, each designed to blend seamlessly with the natural surroundings. Our signature restaurant, "The Azure Table," serves locally-sourced seafood with an innovative twist.</p>
+               
+               <div class="stats-grid">
+                   <div class="stat-item">
+                       <i class="fas fa-bed"></i>
+                       <h4>45</h4>
+                       <p>Luxury Villas</p>
+                   </div>
+                   <div class="stat-item">
+                       <i class="fas fa-utensils"></i>
+                       <h4>3</h4>
+                       <p>Restaurants</p>
+                   </div>
+                   <div class="stat-item">
+                       <i class="fas fa-smile"></i>
+                       <h4>50K+</h4>
+                       <p>Happy Guests</p>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
+
+   <!-- ================= BOOKING SECTION WITH PACKAGE PREVIEW ================= -->
+   <section id="booking">
+       <div class="section-header reveal">
+           <h2>Book Your Experience</h2>
+           <p>Select a package to see stunning visuals and reserve your slice of paradise</p>
+       </div>
+
+       <div class="booking-wrapper reveal">
+           <!-- ===================================================== -->
+           <!-- =============== PACKAGE PREVIEW PANEL =============== -->
+           <!-- ===================================================== -->
+           
+           <div class="package-preview" id="packagePreview">
+               <!-- Main Preview Media -->
+               <div class="preview-media" id="previewMedia">
+                   <!-- Default: Weekend Package Video -->
+                   <!-- ================= DEFAULT VIDEO LINK HERE ================= -->
+                   <video id="previewVideo" autoplay muted loop playsinline>
+                       <source src="https://www.kapwing.com/videos/69a527493436d930ce2679fb" type="video/mp4">
+                   </video>
+                   
+                   <!-- Fallback/Alternative Image (hidden by default) -->
+                   <img id="previewImage" src="" alt="Package Preview" style="display: none;">
+                   
+                   <!-- Media Type Indicator -->
+                   <div class="media-indicator" id="mediaIndicator">
+                       <i class="fas fa-video"></i> VIDEO
+                   </div>
+               </div>
+               
+               <!-- Preview Info Overlay -->
+               <div class="preview-overlay">
+                   <span class="preview-badge" id="previewBadge">Most Popular</span>
+                   <h3 class="preview-title" id="previewTitle">Weekend Retreat</h3>
+                   <div class="preview-price" id="previewPrice">
+                       ₹2,500<span>/person</span>
+                   </div>
+               </div>
+
+               <!-- Thumbnail Navigation -->
+               <div class="preview-thumbnails" id="previewThumbnails">
+                   <div class="preview-thumb active" onclick="changeMedia(0)">
+                       <img src="YOUR_WEEKEND_THUMB_1_LINK_HERE" alt="Main">
+                   </div>
+                   <div class="preview-thumb" onclick="changeMedia(1)">
+                       <img src="YOUR_WEEKEND_THUMB_2_LINK_HERE" alt="View 2">
+                   </div>
+                   <div class="preview-thumb" onclick="changeMedia(2)">
+                       <img src="YOUR_WEEKEND_THUMB_3_LINK_HERE" alt="View 3">
+                   </div>
+               </div>
+
+               <!-- Preview Details -->
+               <div class="preview-details">
+                   <h4><i class="fas fa-star"></i> Package Highlights</h4>
+                   <ul class="preview-features" id="previewFeatures">
+                       <li><i class="fas fa-check-circle"></i> 2 nights beachfront stay</li>
+                       <li><i class="fas fa-check-circle"></i> All meals included</li>
+                       <li><i class="fas fa-check-circle"></i> Private beach access</li>
+                       <li><i class="fas fa-check-circle"></i> Sunset cruise included</li>
+                       <li><i class="fas fa-check-circle"></i> Complimentary spa session</li>
+                   </ul>
+               </div>
+           </div>
+
+           <!-- ===================================================== -->
+           <!-- =============== BOOKING FORM ======================== -->
+           <!-- ===================================================== -->
+           <!-- 
+               ============================================================
+               ============ ADMIN EMAIL NOTIFICATION SETUP ================
+               ============================================================
+               
+               YEH FORM 2 TARIKON SE ADMIN KO NOTIFY KAR SAKTA HAI:
+               
+               OPTION 1: FORMSPREE (EMAIL) - RECOMMENDED
+               -----------------------------------------
+               1. https://formspree.io par jao aur free account banao
+               2. New form create karo
+               3. Aapka admin email verify karo
+               4. Form endpoint URL copy karo
+               5. Niche "YOUR_FORMSPREE_ENDPOINT" ki jagah paste karo
+               
+               Example: https://formspree.io/f/xnqkvnzp
+               
+               Har booking pr automatic email jayega aapke admin email par!
+               
+               
+               OPTION 2: WHATSAPP NOTIFICATION
+               --------------------------------
+               Agar WhatsApp chahiye toh niche diye gaye code ko uncomment karo
+               aur Font Awesome ka WhatsApp icon use karo
+           -->
+
+           <div class="booking-container">
+               <!-- ========================================================= -->
+               <!-- =============== ADMIN NOTIFICATION INFO BOX ============= -->
+               <!-- ========================================================= -->
+               <div class="admin-notify-box">
+                   <i class="fas fa-bell"></i>
+                   <p><i class="fas fa-envelope"></i> Booking confirmation will be sent to: <strong>YOUR_ADMIN_EMAIL@EXAMPLE.COM</strong></p>
+                   <p style="margin-top: 0.5rem; font-size: 0.75rem;">
+                       <i class="fab fa-whatsapp"></i> WhatsApp: <strong>YOUR_WHATSAPP_NUMBER</strong>
+                   </p>
+               </div>
+
+               <form 
+                   id="bookingForm"
+                   class="booking-form" 
+                   action="YOUR_FORMSPREE_ENDPOINT" 
+                   method="POST"
+               >
+                   <!-- 
+                       =========================================================
+                       ============ FORMSPREE ENDPOINT - YAHAN EDIT KARO =======
+                       =========================================================
+                       
+                       STEP 1: https://formspree.io/register par jao
+                       STEP 2: Account banao aur email verify karo
+                       STEP 3: "New Project" → "Create Form"
+                       STEP 4: Form name: "Ocean Breeze Bookings"
+                       STEP 5: Endpoint URL copy karo (jaise: https://formspree.io/f/abcdefgh)
+                       STEP 6: Niche YOUR_FORMSPREE_ENDPOINT ki jagah paste karo
+                       
+                       BAAD MEIN: Formspree dashboard se aap dekh sakte ho:
+                       - Kitne bookings aaye
+                       - Sab details export kar sakte ho Excel mein
+                       - Auto-reply email setup kar sakte ho customer ko
+                   -->
+
+                   <!-- Honeypot spam protection -->
+                   <input type="text" name="_gotcha" style="display:none">
+                   
+                   <!-- Custom email subject -->
+                   <input type="hidden" name="_subject" value="🌊 New Booking Request - Ocean Breeze Retreat">
+                   
+                   <!-- Redirect after submit (optional) -->
+                   <!-- <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html"> -->
+                   
+                   <!-- Selected package hidden field -->
+                   <input type="hidden" name="selected_package" id="selectedPackageInput" value="Weekend Retreat">
+
+                   <!-- Package Selection -->
+                   <div class="package-select">
+                       <!-- BEACH DAY PACKAGE OPTION -->
+                       <label class="package-option" onclick="selectPackage('beach')" id="option-beach">
+                           <input type="radio" name="package" value="Beach Day Escape - ₹1,300" onchange="selectPackage('beach')">
+                           <div class="price">₹1,300</div>
+                           <div class="name">Beach Day</div>
+                       </label>
+
+                       <!-- WEEKEND PACKAGE OPTION (Default Selected) -->
+                       <label class="package-option selected" onclick="selectPackage('weekend')" id="option-weekend">
+                           <input type="radio" name="package" value="Weekend Retreat - ₹2,500" checked onchange="selectPackage('weekend')">
+                           <div class="price">₹2,500</div>
+                           <div class="name">Weekend</div>
+                       </label>
+
+                       <!-- LUXURY PACKAGE OPTION -->
+                       <label class="package-option" onclick="selectPackage('luxury')" id="option-luxury">
+                           <input type="radio" name="package" value="Luxury Getaway - ₹5,000" onchange="selectPackage('luxury')">
+                           <div class="price">₹5,000</div>
+                           <div class="name">Luxury</div>
+                       </label>
+                   </div>
+
+                   <div class="form-row">
+                       <div class="form-group">
+                           <label><i class="fas fa-user"></i> Full Name *</label>
+                           <input type="text" name="full_name" placeholder="John Doe" required>
+                       </div>
+                       <div class="form-group">
+                           <label><i class="fas fa-envelope"></i> Email Address *</label>
+                           <input type="email" name="email" placeholder="john@example.com" required>
+                       </div>
+                   </div>
+
+                   <div class="form-row">
+                       <div class="form-group">
+                           <label><i class="fas fa-phone"></i> Phone Number *</label>
+                           <input type="tel" name="phone" placeholder="+91 98765 43210" required>
+                       </div>
+                       <div class="form-group">
+                           <label><i class="fas fa-users"></i> Number of Guests *</label>
+                           <select name="guests" required>
+                               <option value="">Select guests</option>
+                               <option value="1">1 Guest</option>
+                               <option value="2" selected>2 Guests</option>
+                               <option value="3">3 Guests</option>
+                               <option value="4">4 Guests</option>
+                               <option value="5">5 Guests</option>
+                               <option value="6+">6+ Guests (Group booking)</option>
+                           </select>
+                       </div>
+                   </div>
+
+                   <div class="form-row">
+                       <div class="form-group">
+                           <label><i class="fas fa-calendar-check"></i> Check-in Date *</label>
+                           <input type="date" name="check_in" id="checkIn" required>
+                       </div>
+                       <div class="form-group">
+                           <label><i class="fas fa-calendar-times"></i> Check-out Date *</label>
+                           <input type="date" name="check_out" id="checkOut" required>
+                       </div>
+                   </div>
+
+                   <div class="form-group">
+                       <label><i class="fas fa-comment"></i> Special Requests</label>
+                       <textarea name="message" placeholder="Tell us about any special occasions, dietary requirements, or requests..."></textarea>
+                   </div>
+
+                   <p class="no-payment-note">
+                       <i class="fas fa-shield-alt"></i> No payment required now. Our team will contact you within 24 hours.
+                   </p>
+
+                   <button type="submit" class="submit-btn">
+                       <i class="fas fa-paper-plane"></i> Request Booking
+                   </button>
+               </form>
+
+               <!-- 
+                   =========================================================
+                   ============ WHATSAPP BUTTON (ALTERNATIVE) ==============
+                   =========================================================
+                   
+                   Agar direct WhatsApp chahiye toh upar form ko comment karke
+                   niche wala button use karo:
+               -->
+               <!-- 
+               <a href="https://wa.me/919876543210?text=Hi%20Ocean%20Breeze%20Retreat,%20I%20want%20to%20book%20a%20package" 
+                  class="submit-btn" 
+                  style="background: #25D366; text-decoration: none; display: flex; margin-top: 1rem;">
+                   <i class="fab fa-whatsapp"></i> Book via WhatsApp
+               </a>
+               -->
+           </div>
+       </div>
+   </section>
+
+   <!-- ================= CONTACT SECTION ================= -->
+   <section id="contact">
+       <div class="section-header reveal">
+           <h2>Get In Touch</h2>
+           <p>We're here to make your dream vacation a reality</p>
+       </div>
+
+       <div class="contact-container">
+           <div class="contact-info reveal">
+               <div class="contact-card">
+                   <i class="fas fa-map-marker-alt"></i>
+                   <div>
+                       <h4>Visit Us</h4>
+                       <!-- ================= EDIT YOUR ADDRESS HERE ================= -->
+                       <p>Ocean Breeze Retreat<br>
+                       123 Coastal Highway<br>
+                       Marina Beach, Chennai - 600001<br>
+                       Tamil Nadu, India</p>
+                   </div>
+               </div>
+
+               <div class="contact-card">
+                   <i class="fas fa-phone-alt"></i>
+                   <div>
+                       <h4>Call Us</h4>
+                       <!-- ================= EDIT YOUR PHONE NUMBER HERE ================= -->
+                       <a href="tel:+919876543210">+91 98765 43210</a><br>
+                       <a href="tel:+914412345678">+91 44 1234 5678</a>
+                   </div>
+               </div>
+
+               <div class="contact-card">
+                   <i class="fas fa-envelope"></i>
+                   <div>
+                       <h4>Email Us</h4>
+                       <!-- ================= EDIT YOUR EMAIL HERE ================= -->
+                       <!-- YEH EMAIL ADMIN NOTIFICATION KE LIYE BHI USE HOGA -->
+                       <a href="mailto:YOUR_ADMIN_EMAIL@EXAMPLE.COM">YOUR_ADMIN_EMAIL@EXAMPLE.COM</a><br>
+                       <a href="mailto:bookings@oceanbreezeretreat.com">bookings@oceanbreezeretreat.com</a>
+                   </div>
+               </div>
+
+               <div class="contact-card">
+                   <i class="fas fa-clock"></i>
+                   <div>
+                       <h4>Opening Hours</h4>
+                       <p>Resort: 24/7<br>
+                       Restaurant: 7:00 AM - 11:00 PM<br>
+                       Spa: 8:00 AM - 9:00 PM</p>
+                   </div>
+               </div>
+           </div>
+
+           <div class="map-container reveal">
+               <div class="map-placeholder">
+                   <i class="fas fa-map-marked-alt"></i>
+                   <p>Embed Your Map Here</p>
+                   <small>Replace with Google Maps iframe</small>
+               </div>
+           </div>
+       </div>
+   </section>
+
+   <!-- ================= FOOTER ================= -->
+   <footer>
+       <div class="footer-content">
+           <div class="footer-section">
+               <h4><i class="fas fa-water"></i> Ocean Breeze Retreat</h4>
+               <p style="color: var(--ocean-pale); line-height: 1.8;">Your gateway to coastal luxury. Experience the perfect blend of natural beauty and world-class hospitality.</p>
+               <div class="social-links" style="margin-top: 1.5rem;">
+                   <a href="YOUR_FACEBOOK_LINK_HERE"><i class="fab fa-facebook-f"></i></a>
+                   <a href="YOUR_INSTAGRAM_LINK_HERE"><i class="fab fa-instagram"></i></a>
+                   <a href="YOUR_TWITTER_LINK_HERE"><i class="fab fa-twitter"></i></a>
+                   <a href="YOUR_YOUTUBE_LINK_HERE"><i class="fab fa-youtube"></i></a>
+               </div>
+           </div>
+
+           <div class="footer-section">
+               <h4>Quick Links</h4>
+               <ul>
+                   <li><a href="#home">Home</a></li>
+                   <li><a href="#packages">Packages</a></li>
+                   <li><a href="#gallery">Gallery</a></li>
+                   <li><a href="#about">About Us</a></li>
+                   <li><a href="#booking">Booking</a></li>
+                   <li><a href="#contact">Contact</a></li>
+               </ul>
+           </div>
+
+           <div class="footer-section">
+               <h4>Services</h4>
+               <ul>
+                   <li><a href="#">Room Booking</a></li>
+                   <li><a href="#">Restaurant & Bar</a></li>
+                   <li><a href="#">Spa & Wellness</a></li>
+                   <li><a href="#">Water Sports</a></li>
+                   <li><a href="#">Event Planning</a></li>
+                   <li><a href="#">Wedding Packages</a></li>
+               </ul>
+           </div>
+
+           <div class="footer-section">
+               <h4>Newsletter</h4>
+               <p style="color: var(--ocean-pale); margin-bottom: 1rem;">Subscribe for exclusive offers and updates</p>
+               <div class="newsletter">
+                   <input type="email" placeholder="Your email address">
+                   <button type="button">Subscribe</button>
+               </div>
+           </div>
+       </div>
+
+       <div class="footer-bottom">
+           <p>&copy; 2024 Ocean Breeze Retreat. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--sand-dark);"></i> for paradise seekers</p>
+       </div>
+   </footer>
+
+   <!-- ================= JAVASCRIPT ================= -->
+   <script>
+       // ============================================================
+       // =============== PACKAGE DATA WITH PHOTOS/VIDEOS ============
+       // ============================================================
+
+       const packageData = {
+           beach: {
+               name: 'Beach Day Escape',
+               price: '₹1,300',
+               badge: 'Best Value',
+               mainVideo: 'Long video 1.mp4',
+               mainImage: 'https://i.ibb.co/MktZwMy8/aw5t7-Txj4-SD.jpg',
+               hasVideo: true,
+               thumbnails: [
+                   'https://i.ibb.co/MktZwMy8/aw5t7-Txj4-SD.jpg:/',
+                   'https://i.ibb.co/5XcccYHC/vp-VEp-FYDSKU-HQ.jpg',
+                   'https://i.ibb.co/MktZwMy8/aw5t7-Txj4-SD.jpg'
+               ],
+               mediaGallery: [
+                   { type: 'video', src: 'Long video 1.mp4' },
+                   { type: 'image', src: 'https://i.ibb.co/MktZwMy8/aw5t7-Txj4-SD.jpg' },
+                   { type: 'image', src: 'https://i.ibb.co/5XcccYHC/vp-VEp-FYDSKU-HQ.jpg' }
+               ],
+               features: [
+                   '<i class="fas fa-cocktail"></i> Welcome drink & snacks',
+                   '<i class="fas fa-umbrella-beach"></i> Beach umbrella & seating',
+                   '<i class="fas fa-utensils"></i> Access to restaurant',
+                   '<i class="fas fa-swimmer"></i> Basic water sports',
+                   '<i class="fas fa-sun"></i> Sunset viewing'
+               ]
+           },
+           weekend: {
+               name: 'Weekend Retreat',
+               price: '₹2,500',
+               badge: 'Most Popular',
+               mainVideo: 'Long video 3.mp4',
+               mainImage: 'https://i.ibb.co/hRVcVBfv/p-AWa59-Mwo-U-SD.jpg',
+               hasVideo: true,
+               thumbnails: [
+                   'https://i.ibb.co/hRVcVBfv/p-AWa59-Mwo-U-SD.jpg',
+                   'https://i.ibb.co/Ps8DNtg9/CWe-Jo-ZUv4-Xo-SD.jpg',
+                   'https://i.ibb.co/MktZwMy8/aw5t7-Txj4-SD.jpg'
+               ],
+               mediaGallery: [
+                   { type: 'video', src: 'Long video 3.mp4' },
+                   { type: 'image', src: 'https://i.ibb.co/hRVcVBfv/p-AWa59-Mwo-U-SD.jpg' },
+                   { type: 'image', src: 'https://i.ibb.co/Ps8DNtg9/CWe-Jo-ZUv4-Xo-SD.jpg' }
+               ],
+               features: [
+                   '<i class="fas fa-bed"></i> 2 nights beachfront stay',
+                   '<i class="fas fa-concierge-bell"></i> All meals included',
+                   '<i class="fas fa-water"></i> Private beach access',
+                   '<i class="fas fa-ship"></i> Sunset cruise included',
+                   '<i class="fas fa-spa"></i> Complimentary spa session'
+               ]
+           },
+           luxury: {
+               name: 'Luxury Getaway',
+               price: '₹5,000',
+               badge: 'Premium',
+               mainVideo: 'Long video 3.mp4',
+               mainImage: 'https://i.ibb.co/5h86J2hv/11-beaches-valentinvalkov.jpg',
+               hasVideo: true,
+               thumbnails: [
+                   'https://i.ibb.co/35GHj4gg/Sg-AHARkl-JK0-SD.jpg',
+                   'https://i.ibb.co/Ndbv4X1n/bo-Yw3o-Rv2d8-SD.jpg',
+                   'https://i.ibb.co/XxbfySZ3/5i-fk-Ki-P-U-SD.jpg'
+               ],
+               mediaGallery: [
+                   { type: 'image', src: 'https://i.ibb.co/35GHj4gg/Sg-AHARkl-JK0-SD.jpg' },
+                   { type: 'image', src: 'https://i.ibb.co/Ndbv4X1n/bo-Yw3o-Rv2d8-SD.jpg' },
+                   { type: 'image', src: 'https://i.ibb.co/XxbfySZ3/5i-fk-Ki-P-U-SD.jpg' }
+               ],
+               features: [
+                   '<i class="fas fa-gem"></i> 3 nights premium villa',
+                   '<i class="fas fa-wine-glass-alt"></i> Gourmet dining experience',
+                   '<i class="fas fa-swimming-pool"></i> Private pool & butler',
+                   '<i class="fas fa-helicopter"></i> Helicopter arrival option',
+                   '<i class="fas fa-spa"></i> Full spa & wellness package'
+               ]
+           }
+       };
+
+       let currentPackage = 'weekend';
+       let currentMediaIndex = 0;
+
+       // ============================================================
+       // =============== PACKAGE SELECT FUNCTION ====================
+       // ============================================================
+
+       function selectPackage(packageId) {
+           const data = packageData[packageId];
+           currentPackage = packageId;
+           currentMediaIndex = 0;
+
+           // Update radio button styling
+           document.querySelectorAll('.package-option').forEach(opt => {
+               opt.classList.remove('selected');
+           });
+           document.getElementById('option-' + packageId).classList.add('selected');
+           document.getElementById('option-' + packageId).querySelector('input').checked = true;
+
+           // Update hidden input
+           document.getElementById('selectedPackageInput').value = data.name;
+
+           // Update preview content with animation
+           const preview = document.getElementById('packagePreview');
+           preview.style.opacity = '0.7';
+           preview.style.transform = 'scale(0.98)';
+
+           setTimeout(() => {
+               // Update text content
+               document.getElementById('previewBadge').textContent = data.badge;
+               document.getElementById('previewTitle').textContent = data.name;
+               document.getElementById('previewPrice').innerHTML = data.price + '<span>/person</span>';
+
+               // Update features
+               const featuresList = document.getElementById('previewFeatures');
+               featuresList.innerHTML = data.features.map(f => `<li>${f}</li>`).join('');
+
+               // Update media (Photo/Video)
+               updateMainMedia();
+
+               // Update thumbnails
+               updateThumbnails();
+
+               // Restore opacity
+               preview.style.opacity = '1';
+               preview.style.transform = 'scale(1)';
+           }, 200);
+       }
+
+       // ============================================================
+       // =============== UPDATE MAIN MEDIA (PHOTO/VIDEO) ============
+       // ============================================================
+
+       function updateMainMedia() {
+           const data = packageData[currentPackage];
+           const media = data.mediaGallery[currentMediaIndex];
+           const videoEl = document.getElementById('previewVideo');
+           const imgEl = document.getElementById('previewImage');
+           const indicator = document.getElementById('mediaIndicator');
+
+           if (media.type === 'video' && media.src) {
+               // Show video
+               videoEl.style.display = 'block';
+               imgEl.style.display = 'none';
+               videoEl.src = media.src;
+               videoEl.play();
+               indicator.innerHTML = '<i class="fas fa-video"></i> VIDEO';
+           } else {
+               // Show image
+               videoEl.style.display = 'none';
+               imgEl.style.display = 'block';
+               imgEl.src = media.src;
+               videoEl.pause();
+               indicator.innerHTML = '<i class="fas fa-image"></i> PHOTO';
+           }
+       }
+
+       // ============================================================
+       // =============== UPDATE THUMBNAILS ==========================
+       // ============================================================
+
+       function updateThumbnails() {
+           const data = packageData[currentPackage];
+           const container = document.getElementById('previewThumbnails');
+           
+           container.innerHTML = data.thumbnails.map((thumb, index) => `
+               <div class="preview-thumb ${index === 0 ? 'active' : ''}" onclick="changeMedia(${index})">
+                   <img src="${thumb}" alt="View ${index + 1}">
+               </div>
+           `).join('');
+       }
+
+       // ============================================================
+       // =============== CHANGE MEDIA FROM THUMBNAIL ================
+       // ============================================================
+
+       function changeMedia(index) {
+           currentMediaIndex = index;
+           
+           // Update thumbnail active state
+           document.querySelectorAll('.preview-thumb').forEach((thumb, i) => {
+               thumb.classList.toggle('active', i === index);
+           });
+
+           // Update main media with fade effect
+           const mediaContainer = document.getElementById('previewMedia');
+           mediaContainer.style.opacity = '0.5';
+           
+           setTimeout(() => {
+               updateMainMedia();
+               mediaContainer.style.opacity = '1';
+           }, 200);
+       }
+
+       // ============================================================
+       // =============== SCROLL TO BOOKING FROM PACKAGES ============
+       // ============================================================
+
+       function scrollToBooking(packageId) {
+           selectPackage(packageId);
+           document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+       }
+
+       // ============================================================
+       // =============== MOBILE MENU TOGGLE =========================
+       // ============================================================
+
+       function toggleMenu() {
+           document.querySelector('.nav-links').classList.toggle('active');
+       }
+
+       // Close mobile menu when clicking a link
+       document.querySelectorAll('.nav-links a').forEach(link => {
+           link.addEventListener('click', () => {
+               document.querySelector('.nav-links').classList.remove('active');
+           });
+       });
+
+       // ============================================================
+       // =============== NAVBAR SCROLL EFFECT =======================
+       // ============================================================
+
+       window.addEventListener('scroll', () => {
+           const navbar = document.getElementById('navbar');
+           if (window.scrollY > 100) {
+               navbar.classList.add('scrolled');
+           } else {
+               navbar.classList.remove('scrolled');
+           }
+       });
+
+       // ============================================================
+       // =============== FORM DATE VALIDATION =======================
+       // ============================================================
+
+       const today = new Date().toISOString().split('T')[0];
+       document.querySelectorAll('input[type="date"]').forEach(input => {
+           input.min = today;
+       });
+
+       const checkIn = document.getElementById('checkIn');
+       const checkOut = document.getElementById('checkOut');
+
+       checkIn.addEventListener('change', () => {
+           checkOut.min = checkIn.value;
+           if (checkOut.value && checkOut.value <= checkIn.value) {
+               checkOut.value = '';
+           }
+       });
+
+       // ============================================================
+       // =============== FORM SUBMISSION ============================
+       // ============================================================
+
+       document.getElementById('bookingForm').addEventListener('submit', function(e) {
+           const btn = this.querySelector('.submit-btn');
+           btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+           btn.disabled = true;
+           // Form will submit to Formspree, page will reload
+       });
+
+       // ============================================================
+       // =============== SCROLL REVEAL ANIMATION ====================
+       // ============================================================
+
+       const revealElements = document.querySelectorAll('.reveal');
+
+       const revealOnScroll = () => {
+           revealElements.forEach(element => {
+               const windowHeight = window.innerHeight;
+               const elementTop = element.getBoundingClientRect().top;
+               const revealPoint = 150;
+
+               if (elementTop < windowHeight - revealPoint) {
+                   element.classList.add('active');
+               }
+           });
+       };
+
+       window.addEventListener('scroll', revealOnScroll);
+       window.addEventListener('load', revealOnScroll);
+
+       // ============================================================
+       // =============== SMOOTH SCROLL FOR ANCHORS ==================
+       // ============================================================
+
+       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+           anchor.addEventListener('click', function (e) {
+               e.preventDefault();
+               const target = document.querySelector(this.getAttribute('href'));
+               if (target) {
+                   target.scrollIntoView({
+                       behavior: 'smooth',
+                       block: 'start'
+                   });
+               }
+           });
+       });
+
+       // Initialize with weekend package
+       window.addEventListener('load', () => {
+           selectPackage('weekend');
+       });
+   </script>
+</body>
+</html>
